@@ -23,7 +23,7 @@ public final class App {
         String dayWithSmallestTempSpread = getInformation.getDayWithSmallestSpread();       // Your day analysis function call …
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
-    }
+      //returns the team with the smallest distance
+        String teamWithSmallestGoalSpread = getInformation.getTeamNameWithSmallestDistance(); // Your goal analysis function call …
+        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);}
 }
