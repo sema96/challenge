@@ -1,5 +1,8 @@
+package getdata;
 import java.io.*;
 import java.util.ArrayList;
+
+import de.exxcellent.challenge.models.WeatherData;
 
 //class that reads the csv file
 public class ReadCSV
@@ -8,8 +11,8 @@ public class ReadCSV
 //code for reading the relevant data from the weather.csv file, returns an ArrayList
 public ArrayList <WeatherData> readWeatherData() 
 {  
-	private String line = "";  
-	private String splitBy = ","; 
+	 String line = "";  
+	 String splitBy = ","; 
 	
 
 	//using the WeatherData model, for storing the data

@@ -1,3 +1,4 @@
+package de.exxcellent.challenge.models;
 
 //This class is to store the relevant data of the weather.csv 
 
