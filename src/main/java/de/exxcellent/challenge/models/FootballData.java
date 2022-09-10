@@ -43,9 +43,13 @@ package de.exxcellent.challenge.models;
 			this.goalsAllowed = goalsAllowed;
 		}
 
-//difference of the goals and the goals, which are actually allowed, to find the name of the team with the smallest distance between them		
+//distance of the goals, negative values are transformed into positive values		
 		public int getDistance() {
-			return getGoals()-getGoalsAllowed();
+			int distance= getGoals()-getGoalsAllowed();
+			if(distance<0) {
+				distance=-distance;
+			}
+			return distance;
 		}
 
 }

@@ -56,29 +56,18 @@ public class GetInformation {
 		//for all football data elements, the distances are added in the ArrayList
 		for(FootballData element :  getData.readFootballData())
 		{
-			//assigning to a variable, needed to consider negative values
-			int getDistance=element.getDistance();
-			
-	//negative value is transformed into positive value, since the smallest distance is needed
-			if(getDistance<0) {
-				getDistance=-getDistance;
-			}
-			
 			//all distances are added into the array, for finding the teamname
-			distance.add(getDistance);	
+			distance.add(element.getDistance());	
 		}
 		
 		//Function, which finds the smallest distance
 		 int smallestDistance = Collections.min(distance);
 
-//searches the name of the team with the smallest distance spread, by using the variable
-//smallest Distance
+//searches the name of the team with the smallest distance spread, by using the variable smallest Distance
 		
 		 for(FootballData element :  getData.readFootballData())
 			{
-	//positive, as well as negative values are considered here
-			 
-			 if(element.getDistance()==smallestDistance || element.getDistance()==-smallestDistance ) {
+			 if(element.getDistance()==smallestDistance ) {
 				 teamName= element.getTeamName();
 			 }
 			}
