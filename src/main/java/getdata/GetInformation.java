@@ -3,8 +3,7 @@ package getdata;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import de.exxcellent.challenge.models.WeatherData;
-import de.exxcellent.challenge.models.FootballData;
+import de.exxcellent.challenge.models.DataModel;
 
 //this class gives the actual information, which is asked in the task
 public class GetInformation {
@@ -22,7 +21,7 @@ public class GetInformation {
 		String dayWithSmallestTempSpread ="";
 		 
 		//for all weather data elements, the differences are added in the ArrayList
-		for(WeatherData element :  getData.readWeatherData())
+		for(DataModel element :  getData.readWeatherData())
 		{
 			differences.add(element.getDiff());	
 		}
@@ -32,10 +31,10 @@ public class GetInformation {
 
 		 
 		 //searches the day of the smallest spread, by using  smallestSpread and comparing it 
-		 for(WeatherData element :  getData.readWeatherData())
+		 for(DataModel element :  getData.readWeatherData())
 			{
 			 if(element.getDiff()==smallestSpread) {
-				 dayWithSmallestTempSpread= element.getDay();
+				 dayWithSmallestTempSpread= element.getSearchedValue();
 			 }
 			}
 		 
@@ -48,27 +47,27 @@ public class GetInformation {
 	public String getTeamNameWithSmallestDistance () {
 
 		//needed for finding the minimum distance
-		 ArrayList <Integer> distance=new ArrayList<>();
+		 ArrayList <Double> distance=new ArrayList<>();
 		 
 		 //teamname, needed for return statement
 		 String teamName ="";
 		 
 		//for all football data elements, the distances are added in the ArrayList
-		for(FootballData element :  getData.readFootballData())
+		for(DataModel element :  getData.readFootballData())
 		{
 			//all distances are added into the array, for finding the teamname
-			distance.add(element.getDistance());	
+			distance.add(element.getDiff());	
 		}
 		
 		//Function, which finds the smallest distance
-		 int smallestDistance = Collections.min(distance);
+		 double smallestDistance = Collections.min(distance);
 
 //searches the name of the team with the smallest distance spread, by using the variable smallest Distance
 		
-		 for(FootballData element :  getData.readFootballData())
+		 for(DataModel element :  getData.readFootballData())
 			{
-			 if(element.getDistance()==smallestDistance ) {
-				 teamName= element.getTeamName();
+			 if(element.getDiff()==smallestDistance) {
+				 teamName= element.getSearchedValue();
 			 }
 			}
 		//returns the name of the team

@@ -2,8 +2,8 @@ package getdata;
 import java.io.*;
 import java.util.ArrayList;
 
-import de.exxcellent.challenge.models.WeatherData;
-import de.exxcellent.challenge.models.FootballData;
+
+import de.exxcellent.challenge.models.DataModel;
 
 public class ReadCSV
 {  
@@ -14,11 +14,11 @@ public class ReadCSV
 	private String splitBy = ","; 
 	
 //code for reading the relevant data from the weather.csv file, returns an ArrayList
-public ArrayList <WeatherData> readWeatherData() 
+public ArrayList <DataModel> readWeatherData() 
 {  
 
 	//using the WeatherData model, for storing the data
-	ArrayList<WeatherData>  weatherData=new ArrayList<>();
+	ArrayList<DataModel>  weatherData=new ArrayList<>();
 	try   
 	{  
 	//parsing a CSV file into BufferedReader class constructor  
@@ -26,7 +26,7 @@ public ArrayList <WeatherData> readWeatherData()
 	
 	//skipping first csv line
 	br.readLine();
-	
+	System.out.print("yo");
 	while ((line = br.readLine()) != null)   //returns a Boolean value  
 	{  
 		
@@ -40,7 +40,7 @@ public ArrayList <WeatherData> readWeatherData()
 	double mnt=Double.parseDouble(data[2]);
 	
 	//the data is stored in the ArrayList
-	weatherData.add(new WeatherData(day,mxt, mnt));
+	weatherData.add(new DataModel(day,mxt, mnt));
 
 	} 
 	
@@ -55,11 +55,11 @@ public ArrayList <WeatherData> readWeatherData()
 }
 
 //code for reading the relevant data from the football.csv file, returns an ArrayList
-public ArrayList <FootballData> readFootballData() 
+public ArrayList <DataModel> readFootballData() 
 {  
 	
 	//using the FootballData model, for storing the data
-	ArrayList<FootballData>  footballData=new ArrayList<>();
+	ArrayList<DataModel>  footballData=new ArrayList<>();
 	try   
 	{  
 	//parsing a CSV file into BufferedReader class constructor  
@@ -81,7 +81,7 @@ public ArrayList <FootballData> readFootballData()
 	
 	//the data is stored in the ArrayList
 	
-	footballData.add(new FootballData(teamName,goals, goalsAllowed));
+	footballData.add(new DataModel(teamName,goals, goalsAllowed));
 	} 
 	
 	}   
