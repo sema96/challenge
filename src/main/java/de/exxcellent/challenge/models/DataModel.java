@@ -28,7 +28,7 @@ package de.exxcellent.challenge.models;
 			this.searchedValue = searchedValue;
 		}
 
-		// max value
+		
 		public double getValue1() {
 			return value1;
 		}
@@ -37,7 +37,7 @@ package de.exxcellent.challenge.models;
 			this.value1 = value1;
 		}
 
-		//min value
+
 		public double getValue2() {
 			return value2;
 		}
